@@ -1,0 +1,112 @@
+{
+  "name": "@aios-fullstack/core",
+  "version": "4.31.1",
+  "description": "AIOS-FullStack Core - Meta-agent and component generation system",
+  "main": "index.js",
+  "module": "index.esm.js",
+  "types": "index.d.ts",
+  "bin": {
+    "aios-core": "bin/aios-core.js"
+  },
+  "files": [
+    "lib/",
+    "bin/",
+    "templates/",
+    "utils/",
+    "tasks/",
+    "docs/",
+    "elicitation/",
+    "index.js",
+    "index.esm.js",
+    "index.d.ts",
+    "README.md",
+    "LICENSE"
+  ],
+  "scripts": {
+    "build": "node ../tools/build-core.js",
+    "test": "npm run test:unit && npm run test:integration",
+    "test:unit": "jest tests/unit",
+    "test:integration": "jest tests/integration",
+    "lint": "eslint .",
+    "typecheck": "tsc --noEmit"
+  },
+  "dependencies": {
+    "@ffmpeg-installer/ffmpeg": "^1.1.0",
+    "@ffprobe-installer/ffprobe": "^2.1.2",
+    "axios": "^1.15.2",
+    "chalk": "^4.1.2",
+    "commander": "^12.1.0",
+    "diff": "^5.2.0",
+    "dotenv": "^17.4.2",
+    "execa": "^5.1.1",
+    "fluent-ffmpeg": "^2.1.3",
+    "form-data": "^4.0.5",
+    "fs-extra": "^11.3.0",
+    "glob": "^10.4.4",
+    "highlight.js": "^11.9.0",
+    "inquirer": "^8.2.6",
+    "js-yaml": "^4.1.0",
+    "node-telegram-bot-api": "^0.67.0",
+    "openai": "^6.35.0",
+    "validator": "^13.15.15",
+    "yahoo-finance2": "^3.14.0"
+  },
+  "peerDependencies": {
+    "@aios-fullstack/memory": "^4.31.0",
+    "@aios-fullstack/performance": "^4.31.0",
+    "@aios-fullstack/security": "^4.31.0",
+    "@aios-fullstack/telemetry": "^4.31.0"
+  },
+  "peerDependenciesMeta": {
+    "@aios-fullstack/memory": {
+      "optional": true
+    },
+    "@aios-fullstack/security": {
+      "optional": true
+    },
+    "@aios-fullstack/performance": {
+      "optional": true
+    },
+    "@aios-fullstack/telemetry": {
+      "optional": true
+    }
+  },
+  "keywords": [
+    "aios",
+    "meta-agent",
+    "component-generation",
+    "ai-orchestration",
+    "fullstack",
+    "development-tools"
+  ],
+  "author": "AIOS Fullstack Team",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/SynkraAI/aios-core.git"
+  },
+  "bugs": {
+    "url": "https://github.com/SynkraAI/aios-core/issues"
+  },
+  "homepage": "https://github.com/SynkraAI/aios-core#readme",
+  "engines": {
+    "node": ">=18.0.0",
+    "npm": ">=9.0.0"
+  },
+  "publishConfig": {
+    "access": "public",
+    "registry": "https://registry.npmjs.org/"
+  },
+  "exports": {
+    ".": {
+      "types": "./index.d.ts",
+      "import": "./index.esm.js",
+      "require": "./index.js"
+    },
+    "./templates": "./templates/",
+    "./utils": "./utils/",
+    "./tasks": "./tasks/",
+    "./docs": "./docs/",
+    "./elicitation": "./elicitation/"
+  }
+}
